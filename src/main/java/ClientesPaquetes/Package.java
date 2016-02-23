@@ -2,19 +2,17 @@ package ClientesPaquetes;
 
 public class Package {
 
-	private int basePrice;
 	private double tax;
+	private PackageType packageType;
 	
-	public Package(int aBasePrice, double aTax){
-		setBasePrice(aBasePrice);
+	public Package(PackageType aPackageType, double aTax){
+		setPackageType(aPackageType);
 		setTax(aTax);
+		
 	}
 	
-	public int getBasePrice() {
-		return basePrice;
-	}
-	public void setBasePrice(int aBasePrice) {
-		basePrice = aBasePrice;
+	public double getBasePrice(Client client) {
+		return packageType.getBasePrice(client);
 	}
 	public double getTax() {
 		return tax;
@@ -22,9 +20,13 @@ public class Package {
 	public void setTax(double aTax) {
 		tax = aTax;
 	}
+	
+	public void setPackageType(PackageType aPackageType) {
+		packageType = aPackageType;
+	}
 
-	public double getPrice() {
-		return getBasePrice() * getTax();
+	public double getPriceFor(Client client) {
+		return getBasePrice(client) * getTax();
 	}
 
 	

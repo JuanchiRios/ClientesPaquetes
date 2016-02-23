@@ -27,7 +27,7 @@ public class Client {
 	}
 
 	public void buyPackage(Package aPackage) {
-		spendMoney(aPackage.getPrice());
+		spendMoney(aPackage.getPriceFor(this));
 	}
 
 }
