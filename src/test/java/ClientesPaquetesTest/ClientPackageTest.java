@@ -55,5 +55,20 @@ public class ClientPackageTest {
 		assertEquals(juan.getAvailableBalance(),1740, DELTA);
 
 	}
+	
+	@Test
+	public void packageBoughtHistoryTest() {
+		juan.buyPackage(package1);
+		juan.buyPackage(mardelPackage);
+		assertEquals(juan.quantityPackagesBought(),2, DELTA);
+		assertEquals(juan.totalSpent(),745, DELTA);
+	}
+	
+	@Test
+	public void mostExpensivePackageTest() {
+		juan.buyPackage(package1);
+		juan.buyPackage(mardelPackage);
+		assertEquals(juan.mostExpensivePackage(),package1);
 
+	}
 }
