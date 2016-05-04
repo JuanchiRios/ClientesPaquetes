@@ -3,3 +3,6 @@ java:
    - 1.7.0_80
 jdk:
   - oraclejdk7
+  
+after_success:
+  - bash <(curl -s https://codecov.io/bash)
